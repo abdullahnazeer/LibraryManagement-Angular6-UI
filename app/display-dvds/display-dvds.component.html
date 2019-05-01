@@ -1,0 +1,52 @@
+<mat-toolbar color="primary">
+  <span>View Registered DVDs</span>
+</mat-toolbar>
+
+<mat-form-field>
+  <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Search For A DVD...">
+</mat-form-field>
+
+<mat-table [dataSource]="dataSourceDVD">
+  <ng-container matColumnDef="ISBN">
+    <mat-header-cell *matHeaderCellDef>ISBN</mat-header-cell>
+    <mat-cell *matCellDef="let element" [ngClass]="{'positive' : element.ISBN > 0}">{{ element.ISBN }}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="title">
+    <mat-header-cell *matHeaderCellDef>Title</mat-header-cell>
+    <mat-cell *matCellDef="let element" [ngClass]="{'positive' : element.ISBN > 0}">{{ element.title }}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="sector">
+    <mat-header-cell *matHeaderCellDef>Sector</mat-header-cell>
+    <mat-cell *matCellDef="let element" [ngClass]="{'positive' : element.ISBN > 0}">{{ element.sector }}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="publicationDate">
+    <mat-header-cell *matHeaderCellDef>Publication Date</mat-header-cell>
+    <mat-cell *matCellDef="let element" [ngClass]="{'positive' : element.ISBN > 0}">{{ element.publicationDate }}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="languages">
+    <mat-header-cell *matHeaderCellDef>Languages</mat-header-cell>
+    <mat-cell *matCellDef="let element" [ngClass]="{'positive' : element.ISBN > 0}">{{ element.languages }}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="subtitles">
+    <mat-header-cell *matHeaderCellDef>Subtitles</mat-header-cell>
+    <mat-cell *matCellDef="let element" [ngClass]="{'positive' : element.ISBN > 0}">{{ element.subtitles }}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="producer">
+    <mat-header-cell *matHeaderCellDef>Producer</mat-header-cell>
+    <mat-cell *matCellDef="let element" [ngClass]="{'positive' : element.ISBN > 0}">{{ element.producer }}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="actors">
+    <mat-header-cell *matHeaderCellDef>Actors</mat-header-cell>
+    <mat-cell *matCellDef="let element" [ngClass]="{'positive' : element.ISBN > 0}">{{ element.actors }}</mat-cell>
+  </ng-container>
+
+  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+</mat-table>

@@ -1,0 +1,79 @@
+.mat-card-add-dvd {    
+    max-width: 100%;    
+    margin: 2em auto;    
+    text-align: left;   
+}
+
+.DVDFormLocation{
+    text-align: -webkit-center;
+}
+
+.addDVDForm{
+    text-align: -webkit-center;
+    margin-right: 20em;
+}
+
+#addDVDButton{
+    margin-left: 30em;
+}
+
+#clearDVDButton{
+    margin-left: 30em;
+}
+
+table {
+    border-collapse: separate;
+    border-spacing: 100px 0;
+  }
+
+#buttonsTable{
+    border-collapse: separate;
+    border-right: 100px;
+    margin-left: 20em;
+    margin-top: 3em;
+}
+
+.addDVDCard {    
+    text-align: -webkit-center; 
+}    
+    
+.addDVD-toolbar {    
+    display: flex;    
+    align-items: left;    
+    width: 100%;    
+}    
+    
+.demo-form {    
+    min-width: 150px;    
+    max-width: 10000px;    
+    width: 100%;    
+}    
+    
+.textField-full-width {    
+    width: 100%;
+    margin-left: 10em;
+    margin-top: 1em;   
+}    
+    
+body {    
+    margin: 0;    
+    font-family: Roboto, sans-serif;    
+}    
+    
+.addDVDCard {    
+    max-width: 100%;    
+    margin: 2em auto;    
+    text-align: -webkit-center;   
+}    
+    
+mat-toolbar-row {    
+    justify-content: space-between;    
+}    
+    
+.done {    
+    position: fixed;    
+    bottom: 20px;    
+    right: 20px;    
+    color: white;    
+}    
+    

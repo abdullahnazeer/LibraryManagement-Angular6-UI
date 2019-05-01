@@ -1,0 +1,69 @@
+<mat-toolbar color="primary">
+  <span>Add A New Book</span>
+</mat-toolbar>
+
+<mat-card>
+  <mat-card-title class="addBookCard">
+    Please Enter The Corresponding Details Below :
+  </mat-card-title>
+
+  <mat-card-content class="bookFormLocation">
+    <form class="addBookForm" (ngSubmit)="onAddBook(f)" #f="ngForm">
+      <table>
+        <tr>
+          <td colspan="12">
+            <mat-form-field class="textField-full-width">
+              <input id="ISBN" name="ISBN" required ngModel matInput placeholder="Book ISBN">
+            </mat-form-field>
+          </td>
+          <td colspan="12">
+            <mat-form-field class="textField-full-width">
+              <input id="title" name="title" required ngModel matInput placeholder="Book Title">
+            </mat-form-field>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="12">
+            <mat-form-field class="textField-full-width">
+              <input id="sector" name="sector" required ngModel matInput placeholder="Book Sector">
+            </mat-form-field>
+          </td>
+          <td colspan="12">
+            <mat-form-field class="textField-full-width">
+              <input id="publicationDate" name="publicationDate" required ngModel matInput placeholder="Date Of Publication">
+            </mat-form-field>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="12">
+            <mat-form-field class="textField-full-width">
+              <input id="authors" name="authors" required ngModel matInput placeholder="Book Authors">
+            </mat-form-field>
+          </td>
+          <td colspan="12">
+            <mat-form-field class="textField-full-width">
+              <input id="publisher" name="publisher" required ngModel matInput placeholder="Book Publisher">
+            </mat-form-field>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="18">
+            <mat-form-field class="textField-full-width">
+              <input id="noOfPages" name="noOfPages" required ngModel matInput placeholder="Number Of Pages">
+            </mat-form-field>
+          </td>
+        </tr>
+      </table>
+      <table id="buttonsTable">
+        <tr>
+          <td>
+            <button mat-raised-button color="primary" type="submit">Add Book</button>
+          </td>
+          <td>
+            <button mat-raised-button color="primary" type="reset">Clear All</button>
+          </td>
+        </tr>
+      </table>
+    </form>
+  </mat-card-content>
+</mat-card>

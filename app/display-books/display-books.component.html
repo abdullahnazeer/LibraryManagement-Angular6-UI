@@ -1,0 +1,47 @@
+<mat-toolbar color="primary">
+    <span>View Registered Books</span>
+  </mat-toolbar>
+
+<mat-form-field>
+    <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Search For A Book...">
+</mat-form-field>
+
+<mat-table [dataSource]="dataSource">
+    <ng-container matColumnDef="ISBN">
+      <mat-header-cell *matHeaderCellDef>ISBN</mat-header-cell>
+      <mat-cell *matCellDef="let element" [ngClass]="{'positive' : element.ISBN > 0}">{{ element.ISBN }}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="title">
+        <mat-header-cell *matHeaderCellDef>Title</mat-header-cell>
+        <mat-cell *matCellDef="let element" [ngClass]="{'positive' : element.ISBN > 0}">{{ element.title }}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="sector">
+        <mat-header-cell *matHeaderCellDef>Sector</mat-header-cell>
+        <mat-cell *matCellDef="let element" [ngClass]="{'positive' : element.ISBN > 0}">{{ element.sector }}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="publicationDate">
+        <mat-header-cell *matHeaderCellDef>Publication Date</mat-header-cell>
+        <mat-cell *matCellDef="let element" [ngClass]="{'positive' : element.ISBN > 0}">{{ element.publicationDate }}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="authors">
+        <mat-header-cell *matHeaderCellDef>Authors</mat-header-cell>
+        <mat-cell *matCellDef="let element" [ngClass]="{'positive' : element.ISBN > 0}">{{ element.authors }}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="publisher">
+        <mat-header-cell *matHeaderCellDef>Publisher</mat-header-cell>
+        <mat-cell *matCellDef="let element" [ngClass]="{'positive' : element.ISBN > 0}">{{ element.publisher }}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="noOfPages">
+        <mat-header-cell *matHeaderCellDef>No. Of Pages</mat-header-cell>
+        <mat-cell *matCellDef="let element" [ngClass]="{'positive' : element.ISBN > 0}">{{ element.noOfPages }}</mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+</mat-table>

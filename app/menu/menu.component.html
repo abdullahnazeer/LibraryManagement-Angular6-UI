@@ -1,0 +1,84 @@
+<mat-toolbar color="primary">
+    <span>Colombo Public Library Management System</span>
+        <mat-card-content class="menuPosition">
+            <button class="cardHeader" mat-raised-button color="primary" [matMenuTriggerFor]="menu">
+                <mat-icon>menu</mat-icon>
+                Please Select An Option
+            </button>
+            <mat-menu #menu="matMenu">
+                <button mat-menu-item [matMenuTriggerFor]="subAddMenu">
+                    <mat-icon>event_available</mat-icon>
+                    <span>Add Item</span>
+                </button>
+                <button mat-menu-item [matMenuTriggerFor]="subDeleteMenu">
+                    <mat-icon>event_busy</mat-icon>
+                    <span>Delete Item</span>
+                </button>
+                <button mat-menu-item [matMenuTriggerFor]="subListMenu">
+                    <mat-icon>description</mat-icon>
+                    <span>View List Of Items</span>
+                </button>
+                <button mat-menu-item [matMenuTriggerFor]="subBorrowMenu">
+                    <mat-icon>person_add</mat-icon>
+                    <span>Borrow An Item</span>
+                </button>
+                <button mat-menu-item [matMenuTriggerFor]="subReturnMenu">
+                    <mat-icon>done</mat-icon>
+                    <span>Return An Item</span>
+                </button>
+                <button mat-menu-item [matMenuTriggerFor]="subReserveMenu">
+                    <mat-icon>person_outline</mat-icon>
+                    <span>Make A Reservation</span>
+                </button>
+                <button mat-menu-item [matMenuTriggerFor]="subMemberMenu">
+                        <mat-icon>group</mat-icon>
+                        <span>Member Options</span>
+                </button>
+                <button mat-menu-item [matMenuTriggerFor]="subReportMenu">
+                    <mat-icon>desktop_windows</mat-icon>
+                    <span>Generate Report</span>
+                </button>
+            </mat-menu>
+        </mat-card-content>
+
+    <mat-menu #subAddMenu="matMenu">
+        <button mat-menu-item routerLink="/add-book">Add A New Book</button>
+        <button mat-menu-item routerLink="/add-dvd">Add A New DVD</button>
+    </mat-menu>
+
+    <mat-menu #subDeleteMenu="matMenu">
+        <button mat-menu-item routerLink="/delete-book">Delete A Book</button>
+        <button mat-menu-item routerLink="/delete-dvd">Delete A DVD</button>
+    </mat-menu>
+
+    <mat-menu #subListMenu="matMenu">
+            <button mat-menu-item routerLink="/display-books">View List Of Books</button>
+            <button mat-menu-item routerLink="/display-dvds">View List Of DVDs</button>
+    </mat-menu>
+
+    <mat-menu #subBorrowMenu="matMenu">
+        <button mat-menu-item routerLink="/borrow-book">Borrow A Book</button>
+        <button mat-menu-item routerLink="/borrow-dvd">Borrow A DVD</button>
+    </mat-menu>
+
+    <mat-menu #subReturnMenu="matMenu">
+        <button mat-menu-item routerLink="/return-book">Return A Book</button>
+        <button mat-menu-item routerLink="/return-dvd">Return A DVD</button>
+    </mat-menu>
+
+    <mat-menu #subReserveMenu="matMenu">
+        <button mat-menu-item routerLink="/reserve-book">Reserve A Book</button>
+        <button mat-menu-item routerLink="/reserve-dvd">Reserve A DVD</button>
+    </mat-menu>
+
+    <mat-menu #subMemberMenu="matMenu">
+            <button mat-menu-item routerLink="/display-members">View Existing Members</button>
+            <button mat-menu-item routerLink="/add-member">Add A New Member</button>
+            <button mat-menu-item routerLink="/delete-member">Delete An Existing Member</button>
+    </mat-menu>
+
+    <mat-menu #subReportMenu="matMenu">
+        <button mat-menu-item routerLink="/generate-report">Withdrawn Books Report</button>
+        <button mat-menu-item routerLink="/generate-report-dvd">Withdrawn DVD Reports</button>
+    </mat-menu>
+</mat-toolbar>

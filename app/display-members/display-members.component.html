@@ -1,0 +1,47 @@
+<script src="https://www.gstatic.com/firebasejs/5.7.0/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyA_EMkoJ7RX6VmLAI2f49STrJ8xw9x8SSo",
+    authDomain: "library-management-96943.firebaseapp.com",
+    databaseURL: "https://library-management-96943.firebaseio.com",
+    projectId: "library-management-96943",
+    storageBucket: "library-management-96943.appspot.com",
+    messagingSenderId: "642586862378"
+  };
+  firebase.initializeApp(config);
+</script>
+
+<mat-toolbar color="primary">
+    <span>View Existing Members</span>
+  </mat-toolbar>
+
+<mat-table [dataSource]="dataSource">
+    <ng-container matColumnDef="firstName">
+      <mat-header-cell *matHeaderCellDef>First Name</mat-header-cell>
+      <mat-cell *matCellDef="let element">{{ element.firstName }}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="lastName">
+        <mat-header-cell *matHeaderCellDef>Last Name</mat-header-cell>
+        <mat-cell *matCellDef="let element">{{ element.lastName }}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="email">
+        <mat-header-cell *matHeaderCellDef>Email</mat-header-cell>
+        <mat-cell *matCellDef="let element">{{ element.email }}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="contact">
+        <mat-header-cell *matHeaderCellDef>Contact</mat-header-cell>
+        <mat-cell *matCellDef="let element">{{ element.contact }}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="memberID">
+        <mat-header-cell *matHeaderCellDef>Member ID</mat-header-cell>
+        <mat-cell *matCellDef="let element">{{ element.memberID }}</mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+</mat-table>

@@ -1,0 +1,57 @@
+<mat-toolbar color="primary">
+  <span>Add A New Member</span>
+</mat-toolbar>
+
+<mat-card id="vertical">
+  <mat-card-title class="addMemberCard">
+    Please Enter The Corresponding Details Below :
+  </mat-card-title>
+
+  <mat-card-content class="MemberFormLocation">
+    <form class="addMemberForm" (ngSubmit)="onAddMember(f)" #f="ngForm">
+      <table>
+        <tr>
+          <td colspan="12">
+            <mat-form-field class="textField-full-width">
+              <input id="firstName" name="firstName" required ngModel matInput placeholder="First Name">
+            </mat-form-field>
+          </td>
+          <td colspan="12">
+            <mat-form-field class="textField-full-width">
+              <input id="lastName" name="lastName" required ngModel matInput placeholder="Last Name">
+            </mat-form-field>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="12">
+            <mat-form-field class="textField-full-width">
+              <input id="email" name="email" required ngModel matInput placeholder="E-mail Address">
+            </mat-form-field>
+          </td>
+          <td colspan="12">
+            <mat-form-field class="textField-full-width">
+              <input id="contact" name="contact" required ngModel matInput placeholder="Contact Number">
+            </mat-form-field>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="12">
+            <mat-form-field class="textField-full-width">
+              <input id="idNumber" name="idNumber" required ngModel matInput placeholder="Member ID Number">
+            </mat-form-field>
+          </td>
+        </tr>
+      </table>
+      <table id="buttonsTable">
+        <tr>
+          <td>
+            <button mat-raised-button color="primary" type="submit">Add Member</button>
+          </td>
+          <td>
+            <button mat-raised-button color="primary" type="reset">Clear All</button>
+          </td>
+        </tr>
+      </table>
+    </form>
+  </mat-card-content>
+</mat-card>

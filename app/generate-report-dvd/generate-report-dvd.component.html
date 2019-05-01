@@ -1,0 +1,33 @@
+<mat-toolbar color="primary">
+  <span>Report Of Withdrawn DVDs</span>
+</mat-toolbar>
+
+<mat-table [dataSource]="dataSource">
+  <ng-container matColumnDef="ISBN">
+    <mat-header-cell *matHeaderCellDef>DVD ISBN</mat-header-cell>
+    <mat-cell *matCellDef="let element">{{ element.ISBN }}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="memberID">
+    <mat-header-cell *matHeaderCellDef>Member ID</mat-header-cell>
+    <mat-cell *matCellDef="let element">{{ element.publicationDate }}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="dateWithdrawn">
+      <mat-header-cell *matHeaderCellDef>Date Withdrawn</mat-header-cell>
+      <mat-cell *matCellDef="let element">{{ element.title }}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="daysCurrentlyBorrowed">
+      <mat-header-cell *matHeaderCellDef>Days Currently Borrowed</mat-header-cell>
+      <mat-cell *matCellDef="let element">{{ element.sector }}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="pendingFines">
+      <mat-header-cell *matHeaderCellDef>Pending Fines</mat-header-cell>
+      <mat-cell *matCellDef="let element">{{ element.publicationDate }}</mat-cell>
+  </ng-container>
+
+  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+</mat-table>
